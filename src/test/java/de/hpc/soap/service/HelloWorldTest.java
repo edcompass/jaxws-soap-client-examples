@@ -1,6 +1,5 @@
 package de.hpc.soap.service;
-
-import de.hpc.soap.commons.Initializer;
+ 
 import junit.framework.TestCase;
 
 public class HelloWorldTest extends TestCase {
