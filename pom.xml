@@ -11,13 +11,14 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<ri.version>2.3.0</ri.version>
 	</properties>
 
 	<dependencies> 		<!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-ri -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-ri</artifactId>
-			<version>2.3.1</version>
+			<version>${ri.version}</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
@@ -28,7 +29,28 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>wsdlclient4jaxws-ri.v.${ri.version}</finalName>
+
+
 		<plugins>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -69,7 +91,7 @@
 			</plugin>
 		</plugins>
 
-		<finalName>wsdlclient4jaxws-ri</finalName>
+
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
