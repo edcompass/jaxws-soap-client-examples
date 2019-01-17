@@ -3,6 +3,10 @@ package de.hpc.soap.service;
 import junit.framework.TestCase;
 
 public class HelloWorldTest extends TestCase {
+	
+	{
+		Initializer.init();
+	}
 
 	public void testUpdateEmployeeById() {
 		HelloWorldServiceService service = new HelloWorldServiceService( );
@@ -26,7 +30,8 @@ public class HelloWorldTest extends TestCase {
 		newOne .setName("Predd Bit");
 		Employee x = port.deleteEmployeeById(3);
 		assertNotNull( x ); 
-		assertEquals(x.getId(), new Integer(3)); 
+		assertEquals(new Integer(x.getId() ), new Integer(3)); 
+		
 	}
 
 	public void testAddEmployee() throws URISyntaxException_Exception {
@@ -54,8 +59,8 @@ public class HelloWorldTest extends TestCase {
 		HelloWorldServiceService service = new HelloWorldServiceService( );
 		HelloWorld port = service.getHelloWorldServicePort(); 
 		
-		String sResponse = port.getMsg("jax-ws.2.3.0");
-		assertEquals("Message requested : jax-ws.2.3.0", sResponse); 
+		String sResponse = port.getMsg("jaxws-soap-client-examples");
+		assertEquals("Message requested : jaxws-soap-client-examples", sResponse); 
 	}
 
 }
