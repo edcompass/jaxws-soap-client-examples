@@ -14,7 +14,8 @@
 		<ri.version>2.3.0</ri.version>
 	</properties>
 
-	<dependencies> 		<!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-ri -->
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-ri -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-ri</artifactId>
@@ -29,11 +30,8 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>wsdlclient4jaxws-ri.v.${ri.version}</finalName>
-
-
+		<finalName>wsdl2java-client4jaxws-ri.v.${ri.version}</finalName>
 		<plugins>
-
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
@@ -46,7 +44,7 @@
 				</executions>
 				<configuration>
 					<descriptorRefs>
-						<descriptorRef>with-dependencies</descriptorRef>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
 				</configuration>
 			</plugin>
