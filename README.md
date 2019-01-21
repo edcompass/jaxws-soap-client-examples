@@ -4,7 +4,9 @@
 2) cd jaxws-soap-client-examples
 3) mvn test
 4) prepare client-jar : mvn package
-5) use in common way:
+5) use jars (in dir target/ ) in common way:
 - wsdl2java-client4jaxws-ri.v.2.3.0.jar 
+
 OR
+
 - wsdl2java-client4jaxws-ri.v.2.3.0-jar-with-dependencies.jar
